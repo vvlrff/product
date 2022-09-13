@@ -6,7 +6,7 @@ import { buildPlugins } from "./buildPlugins";
 import { BuildOptions } from "./types/config";
 import buildDevServer from "./buildDevServer";
 
-export default function buildWebpackConfig(options:BuildOptions):webpack.Configuration {
+export default function buildWebpackConfig(options:BuildOptions):webpack.Configuration { 
     const {
         mode,
         paths,
