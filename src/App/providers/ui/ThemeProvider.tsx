@@ -1,13 +1,14 @@
-import { FC, ReactNode, useState, useMemo } from "react";
+import { FC, ReactNode, useMemo, useState } from "react";
 import { LOCAL_STORAGE_THEME_KEY, ThemeContext, ThemeEnum } from "../lib/ThemeContext";  
-import useTheme from "Shared/lib/hooks/useTheme"
 
 interface IThemeProvider {
     children: ReactNode,
 }
 
+const defaultTheme = localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as ThemeEnum || ThemeEnum.LIGHT;
+
 const ThemeProvider: FC<IThemeProvider> = ({children}) => {
-    const { theme, toggleTheme } = useTheme()
+    const [theme, toggleTheme] = useState(defaultTheme)
 
     const themeProps = useMemo(() => {
         return {

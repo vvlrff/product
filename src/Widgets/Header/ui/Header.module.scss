@@ -14,9 +14,15 @@
 
 .links {
     display: flex;
+    align-items: center;
     gap: 20px;
 }
 
 .link {
     color: var(--black);
+}
+
+.logotype {
+    width: 40px;
+    height: 40px;
 }
