@@ -1,3 +1,3 @@
-import ToggleLanguegeButton from "./ui/ToggleLanguegeButton";
+import ToggleLanguegeButton from './ui/ToggleLanguegeButton'
 
 export { ToggleLanguegeButton }
