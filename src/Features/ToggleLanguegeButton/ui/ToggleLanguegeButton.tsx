@@ -1,28 +1,28 @@
-import { FC, ReactNode } from "react";
-import { useTranslation } from "react-i18next";
+import { FC, ReactNode } from 'react'
 
-import Button from "Shared/ui/Button";
+import { useTypedTranslation } from 'Shared/lib/hooks/useTypedTranslation'
+import Button from 'Shared/ui/Button'
 
-import s from "./ToggleLanguegeButton.module.scss"
+import s from './ToggleLanguegeButton.module.scss'
 
 interface IToggleLanguegeButton {
-    children: ReactNode
+  children: ReactNode
 }
 
-const ToggleLanguegeButton:FC<IToggleLanguegeButton> = ({children}, otherProps) => {
-    const { i18n } = useTranslation()
+const ToggleLanguegeButton: FC<IToggleLanguegeButton> = ({ children }, otherProps) => {
+  const { i18n } = useTypedTranslation()
 
-    const toggleLanguege = () => {
-        i18n.changeLanguage(i18n.language === "ru" ? "en" : "ru")
-    }
+  const toggleLanguege = () => {
+    i18n.changeLanguage(i18n.language === 'ru' ? 'en' : 'ru')
+  }
 
-    return(
-        <Button
-            className={s.button}
-            onClick={toggleLanguege}
-            {...otherProps}
+  return (
+      <Button
+          className={s.button}
+          onClick={toggleLanguege}
+          {...otherProps}
         >{children}</Button>
-    )
+  )
 }
 
-export default ToggleLanguegeButton;
+export default ToggleLanguegeButton

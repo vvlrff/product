@@ -1,3 +1,3 @@
-import ToggleThemeButton from "./ui/ToggleThemeButton";
+import ToggleThemeButton from './ui/ToggleThemeButton'
 
 export { ToggleThemeButton }

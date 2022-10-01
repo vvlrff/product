@@ -1,14 +1,17 @@
-import { FC } from "react"
-import Container from "Shared/ui/Container";
+import { useTypedTranslation } from 'Shared/lib/hooks/useTypedTranslation'
 
-import s from "./Footer.module.scss";
+import Container from 'Shared/ui/Container'
 
-const Footer:FC = () => {
-    return(
-        <footer className={s.footer}>
-            <Container>footer</Container>
-        </footer>
-    )
+import s from './Footer.module.scss'
+
+const Footer: React.FC = () => {
+  const { t } = useTypedTranslation('footer')
+
+  return (
+      <footer className={s.footer}>
+          <Container>{t('title')}</Container>
+      </footer>
+  )
 }
 
 export default Footer
