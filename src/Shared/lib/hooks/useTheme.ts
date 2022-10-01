@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { LOCAL_STORAGE_THEME_KEY, ThemeEnum } from "App/providers/lib/ThemeContext";
+import { useContext } from "react";
+import { LOCAL_STORAGE_THEME_KEY, ThemeEnum, ThemeContext } from "App/providers/lib/ThemeContext";
 
 interface IuseTheme {
     theme: ThemeEnum,
@@ -7,9 +7,7 @@ interface IuseTheme {
 }
 
 const useTheme = ():IuseTheme => {
-    const defaultTheme = localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as ThemeEnum || ThemeEnum.LIGHT;
-
-    const [theme, setTheme] = useState(defaultTheme)
+    const {theme, setTheme} = useContext(ThemeContext)
 
     const toggleTheme = () => {
         const newTheme = theme === ThemeEnum.LIGHT ? ThemeEnum.DARK :ThemeEnum.LIGHT;

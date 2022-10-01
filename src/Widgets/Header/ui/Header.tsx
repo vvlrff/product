@@ -1,22 +1,29 @@
-import Container from "Shared/ui/Container/ui/Container";
 import { Link } from "react-router-dom";
-import Button from "Shared/ui/Button";
-import useTheme from "Shared/lib/hooks/useTheme";
+import { useTranslation } from "react-i18next";
+
+import { ToggleLanguegeButton } from "Features/ToggleLanguegeButton";
+import { ToggleThemeButton } from "Features/ToggleThemeButton";
+import Container from "Shared/ui/Container/ui/Container";
+import Logotype from "Shared/assets/icons/logo.svg";
 
 import s from "./Header.module.scss";
 
 const Header = () => {
-    const { theme, toggleTheme } = useTheme()
+    const { t } = useTranslation("header")
 
     return(
         <header className={s.header}>
             <Container className={s.container}>
                 <div className={s.links}>
-                    <Link className={s.link} to={"/"}>Logo</Link>
-                    <Link className={s.link} to={"/about"}>About</Link>
+                    <Link className={s.link} to={"/"}>
+                        <Logotype className={s.logotype} />
+                    </Link>
+                    <Link className={s.link} to={"/about"}>{t("aboutPage")}</Link>
+                    <Link className={s.link} to={"/news"}>{t("newsPage")}</Link>
                 </div>
                 <div className={s.controls}>
-                    <Button onClick={toggleTheme}>Change theme</Button>
+                    <ToggleLanguegeButton>{t("languegeSwitcher")}</ToggleLanguegeButton>
+                    <ToggleThemeButton>{t("themeSwitcher")}</ToggleThemeButton>
                 </div>
             </Container>
         </header>

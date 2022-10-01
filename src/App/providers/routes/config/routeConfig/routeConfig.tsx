@@ -2,7 +2,7 @@ import { AboutPage } from "Pages/AboutPage"
 import { HomePage } from "Pages/HomePage"
 import { RouteProps } from "react-router"
 
-import { AppRoutes, RoutesPath } from "Shared/config/AppRoutes"
+import { AppRoutes, RoutesPath } from "Shared/config/RouterConfig/AppRoutes"
 
 export const routeConfig:Record<AppRoutes, RouteProps> = {
     [AppRoutes.MAIN]: {
