@@ -3,6 +3,7 @@ import webpack, { DefinePlugin } from 'webpack'
 import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
+import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer'
 
 import { BuildOptions } from './types/config'
 
@@ -20,6 +21,7 @@ export function buildPlugins ({ paths, isDev }: BuildOptions): webpack.WebpackPl
     new DefinePlugin({
       IS_DEV: JSON.stringify(isDev)
     }),
-    new ReactRefreshWebpackPlugin()
+    new ReactRefreshWebpackPlugin(),
+    new BundleAnalyzerPlugin()
   ]
 }

@@ -6,7 +6,8 @@ module.exports = {
   extends: [
     'plugin:react/recommended',
     'standard-with-typescript',
-    'plugin:react/jsx-runtime'
+    'plugin:react/jsx-runtime',
+    "plugin:react-hooks/recommended"
   ],
   overrides: [
   ],
@@ -16,13 +17,16 @@ module.exports = {
     project: ['tsconfig.json']
   },
   plugins: [
-    'react'
+    'react',
+    "react-hooks"
   ],
   rules: {
     'react/jsx-indent': [2, 4],
     'react/jsx-indent-props': [2, 4],
     '@typescript-eslint/strict-boolean-expressions': [0],
     '@typescript-eslint/explicit-function-return-type': 'warn',
-    '@typescript-eslint/no-floating-promises': 'warn'
+    '@typescript-eslint/no-floating-promises': 'warn',
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn"
   }
 }

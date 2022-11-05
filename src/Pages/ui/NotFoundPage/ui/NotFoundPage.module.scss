@@ -1,0 +1,18 @@
+@import "/src/App/styles/index";
+
+.container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.info {
+    font-size: $fs-huge;
+}
+
+.link {
+    color: var(--black);
+}
