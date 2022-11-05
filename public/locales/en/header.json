@@ -2,5 +2,6 @@
   "aboutPage": "About",
   "themeSwitcher": "Change theme",
   "languegeSwitcher": "Russian",
-  "newsPage": "News"
+  "followPage": "Follow",
+  "placeholder": "I am looking for..."
 }
