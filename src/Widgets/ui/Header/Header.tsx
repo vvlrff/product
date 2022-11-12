@@ -1,11 +1,10 @@
 import { FC } from 'react'
 import { Link } from 'react-router-dom'
 
-import { ToggleLanguegeButton, ToggleThemeButton } from 'Features'
+import { Autocomplete, ToggleLanguegeButton, ToggleThemeButton } from 'Features'
 import { Container, Logotype, useTypedTranslation } from 'Shared'
 
 import s from './Header.module.scss'
-import Autocomplete from 'Features/ui/Autocomplete/Autocomplete'
 
 const Header: FC = () => {
   const { t } = useTypedTranslation('header')

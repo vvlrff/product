@@ -1,7 +1,11 @@
 @import "/src/App/styles/index";
 
-.button {
+button.button {
     background-color: var(--white);
     color: var(--black);
     cursor: pointer;
+
+    &:hover {
+        background-color: var(--white);
+    }
 }

@@ -12,7 +12,7 @@ interface IAutocomplete {
   placeholder?: string
 };
 
-const Autocomplete: FC<IAutocomplete> = (props) => {
+export const Autocomplete: FC<IAutocomplete> = (props) => {
   const { id, options, className = '', placeholder = '' } = props
   return (
       <MuiAutocomplete
@@ -23,5 +23,3 @@ const Autocomplete: FC<IAutocomplete> = (props) => {
         />
   )
 }
-
-export default Autocomplete
