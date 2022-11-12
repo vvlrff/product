@@ -8,6 +8,6 @@ export {
   Button,
   Container,
   Loader,
-  useTypedTranslation,
-  Logotype
+  Logotype,
+  useTypedTranslation
 }
