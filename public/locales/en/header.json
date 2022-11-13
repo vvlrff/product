@@ -1,7 +1,7 @@
 {
-  "aboutPage": "About",
+  "loginModal": "Login",
   "themeSwitcher": "Change theme",
   "languegeSwitcher": "Russian",
-  "followPage": "Follow",
+  "signupModal": "Sign up",
   "placeholder": "I am looking for..."
 }

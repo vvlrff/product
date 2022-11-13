@@ -1,33 +1,43 @@
-import { FC } from 'react'
+import { FC, useState } from 'react'
 import { Link } from 'react-router-dom'
 
 import { Autocomplete, ToggleLanguegeButton, ToggleThemeButton } from 'Features'
-import { Container, Logotype, useTypedTranslation } from 'Shared'
+import { Container, Logotype, Modal, useTypedTranslation } from 'Shared'
 
 import s from './Header.module.scss'
 
 const Header: FC = () => {
   const { t } = useTypedTranslation('header')
+  const [isOpenLoginModal, setOpenLoginModal] = useState(false)
+  const [isOpenSignUpModal, setOpenSignUpModal] = useState(false)
 
   return (
-      <header className={s.header}>
-          <Container className={s.container}>
-              <div className={s.links}>
-                  <Link className={s.link} to={'/'}>
-                      <Logotype className={s.logotype} />
-                  </Link>
-                  <Link className={s.link} to={'/about'}>{t('aboutPage')}</Link>
-                  <Link className={s.link} to={'/follow'}>{t('followPage')}</Link>
-              </div>
-              <div className={s.search}>
-                  <Autocomplete id='seatch' options={top100Films} placeholder={t('placeholder')} />
-              </div>
-              <div className={s.controls}>
-                  <ToggleLanguegeButton>{t('languegeSwitcher')}</ToggleLanguegeButton>
-                  <ToggleThemeButton>{t('themeSwitcher')}</ToggleThemeButton>
-              </div>
-          </Container>
-      </header>
+      <>
+          <header className={s.header}>
+              <Container className={s.container}>
+                  <div className={s.links}>
+                      <Link className={s.link} to={'/'}>
+                          <Logotype className={s.logotype} />
+                      </Link>
+                      <span className={s.link} onClick={() => setOpenLoginModal(true)}>{t('loginModal')}</span>
+                      <span className={s.link} onClick={() => setOpenSignUpModal(true)}>{t('signupModal')}</span>
+                  </div>
+                  <div className={s.search}>
+                      <Autocomplete id='seatch' options={top100Films} placeholder={t('placeholder')} />
+                  </div>
+                  <div className={s.controls}>
+                      <ToggleLanguegeButton>{t('languegeSwitcher')}</ToggleLanguegeButton>
+                      <ToggleThemeButton>{t('themeSwitcher')}</ToggleThemeButton>
+                  </div>
+              </Container>
+          </header>
+          <Modal open={isOpenLoginModal} onClose={() => setOpenLoginModal(false)}>
+              <div>Авторизация</div>
+          </Modal>
+          <Modal open={isOpenSignUpModal} onClose={() => setOpenSignUpModal(false)}>
+              <div>Регистрация</div>
+          </Modal>
+      </>
   )
 }
 

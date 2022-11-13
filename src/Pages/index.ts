@@ -1,7 +1,7 @@
 import HomePage from './ui/HomePage/HomePage'
-import AboutPage from './ui/AboutPage/AboutPage'
+import LoginPage from './ui/LoginPage/LoginPage'
 
 export {
   HomePage,
-  AboutPage
+  LoginPage
 }

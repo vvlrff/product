@@ -1,7 +1,7 @@
 {
-  "aboutPage": "О нас",
+  "loginModal": "Войти",
   "themeSwitcher": "Сменить тему",
   "languegeSwitcher": "Английский",
-  "followPage": "Подписка",
+  "signupModal": "Регистрация",
   "placeholder": "Я ищу..."
 }
