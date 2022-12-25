@@ -1,7 +1,5 @@
 import { useTypedTranslation } from 'Shared/lib/hooks/useTypedTranslation'
 
-import Container from 'Shared/ui/Container'
-
 import s from './Footer.module.scss'
 
 const Footer: React.FC = () => {
@@ -9,7 +7,7 @@ const Footer: React.FC = () => {
 
   return (
       <footer className={s.footer}>
-          <Container>{t('title')}</Container>
+          {t('title')}
       </footer>
   )
 }

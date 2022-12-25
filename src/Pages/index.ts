@@ -1,7 +1,7 @@
 import HomePage from './ui/HomePage/HomePage'
-import LoginPage from './ui/LoginPage/LoginPage'
+import { NotFoundPage } from './ui/NotFoundPage'
 
 export {
   HomePage,
-  LoginPage
+  NotFoundPage
 }

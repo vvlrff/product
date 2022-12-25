@@ -1,10 +1,10 @@
 @import "/src/App/styles/index";
 
 .autocomplete {
-    background-color: var(--white);
+    background-color: var(--primary);
 }
 
 .input input,
 svg {
-    color: var(--black);
+    color: var(--font-color);
 }

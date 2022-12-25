@@ -1,7 +1,7 @@
 import { FC, useState } from 'react'
 import { Link } from 'react-router-dom'
 
-import { Autocomplete, ToggleLanguegeButton, ToggleThemeButton } from 'Features'
+import { AuthorizationModalContent, Autocomplete, RegistrationModalContent, ToggleThemeButton } from 'Features'
 import { Container, Logotype, Modal, useTypedTranslation } from 'Shared'
 
 import s from './Header.module.scss'
@@ -26,16 +26,16 @@ const Header: FC = () => {
                       <Autocomplete id='seatch' options={top100Films} placeholder={t('placeholder')} />
                   </div>
                   <div className={s.controls}>
-                      <ToggleLanguegeButton>{t('languegeSwitcher')}</ToggleLanguegeButton>
-                      <ToggleThemeButton>{t('themeSwitcher')}</ToggleThemeButton>
+                      {/* <ToggleLanguegeButton>{t('languegeSwitcher')}</ToggleLanguegeButton> */}
+                      <ToggleThemeButton className={s.button}>{t('themeSwitcher')}</ToggleThemeButton>
                   </div>
               </Container>
           </header>
           <Modal open={isOpenLoginModal} onClose={() => setOpenLoginModal(false)}>
-              <div>Авторизация</div>
+              <AuthorizationModalContent />
           </Modal>
           <Modal open={isOpenSignUpModal} onClose={() => setOpenSignUpModal(false)}>
-              <div>Регистрация</div>
+              <RegistrationModalContent />
           </Modal>
       </>
   )

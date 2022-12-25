@@ -1,0 +1,13 @@
+@import "/src/App/styles/index.scss";
+
+.input {
+    background-color: var(--primary);
+
+    & input {
+        color: var(--font-color);
+
+        &::placeholder {
+            color: var(--font-color);
+        }
+    }
+}

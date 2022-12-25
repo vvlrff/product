@@ -11,7 +11,7 @@ interface ILayout {
 
 const Layout: FC<ILayout> = ({ children }) => {
   return (
-      <div>
+      <div className={s.layout}>
           <Header/>
           <main className={s.main}>{children}</main>
           <Footer/>

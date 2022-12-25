@@ -3,10 +3,13 @@
 @import "./themes/dark";
 @import "./themes/light";
 
+body {
+    font-family: $font-poppins;
+}
+
 .app {
-    background-color: var(--white);
-    color: var(--black);
+    background-color: var(--primary);
+    color: var(--secondary);
     min-height: 100vh;
     transition: 0.3s;
-    font-family: $font-poppins;
 }
