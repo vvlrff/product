@@ -29,6 +29,7 @@ module.exports = {
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
     "@typescript-eslint/consistent-type-assertions": [0],
-    "@typescript-eslint/explicit-function-return-type": [0]
+    "@typescript-eslint/explicit-function-return-type": [0],
+    "no-params-reassign": 'off'
   }
 }
