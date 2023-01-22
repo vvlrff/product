@@ -20,13 +20,15 @@ const Counter: FC = () => {
 
   return (
       <div className={s.counter}>
-          <h1>Значение счетчика {conterValue}</h1>
-          <Button
-              onClick={increment}
-          >Увеличить</Button>
-          <Button
-              onClick={decrement}
-          >Уменьшить</Button>
+          <span className={s.title}>Значение счетчика {conterValue}</span>
+          <div className={s.controls}>
+              <Button
+                  onClick={increment}
+            >Увеличить</Button>
+              <Button
+                  onClick={decrement}
+            >Уменьшить</Button>
+          </div>
       </div>
   )
 }
