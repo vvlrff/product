@@ -1,12 +1,10 @@
 import { FC } from 'react'
 import { Layout } from 'Widgets'
 
-import s from './NotFoundPage.module.scss'
-
-export const NotFoundPage: FC = (props) => {
+export const NotFoundPage: FC = () => {
   return (
       <Layout>
-          <span className={s.title}>Страница не найдена</span>
+          <span>Страница не найдена</span>
       </Layout>
   )
 }
