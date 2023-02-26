@@ -1,10 +1,7 @@
 import { FC, ReactNode } from 'react'
-import cn from 'classnames'
 
 import { useTheme } from 'Shared'
 import Button from 'Shared/ui/Button'
-
-import s from './ToggleThemeButton.module.scss'
 
 interface IToggleThemeButton {
   children: ReactNode
@@ -20,7 +17,7 @@ const ToggleThemeButton: FC<IToggleThemeButton> = (props) => {
 
   return (
       <Button
-          className={cn(s.button, className)}
+          className={className}
           onClick={toggleTheme}
           {...props}
         >{children}</Button>
