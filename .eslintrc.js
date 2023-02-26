@@ -31,6 +31,7 @@ module.exports = {
     "@typescript-eslint/consistent-type-assertions": [0],
     "@typescript-eslint/explicit-function-return-type": [0],
     "@typescript-eslint/promise-function-async": "off",
-    "no-params-reassign": 'off'
+    "no-params-reassign": 'off',
+    "@typescript-eslint/no-dynamic-delete": [0]
   }
 }

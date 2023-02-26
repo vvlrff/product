@@ -1,9 +1,7 @@
-import { AuthorizationModal } from './AuthByEmail/ui/AuthorizationModal/AuthorizationModal'
+import { AuthorizationModal } from './AuthByEmail'
 import { RegistrationModal } from './Registration'
-import { LoginReducer } from './AuthByEmail'
 
 export {
   RegistrationModal,
-  AuthorizationModal,
-  LoginReducer
+  AuthorizationModal
 }
