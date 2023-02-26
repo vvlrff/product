@@ -1,8 +1,16 @@
 @import "https://fonts.googleapis.com/css2?family=Poppins&display=swap";
 
-$fs-small: small;
-$fs-normal: normal;
-$fs-medium: medium;
-$fs-large: large;
-$fs-huge: 2em;
-$font-poppins: "Poppins", sans-serif;
+
+body {
+    --fs-small: small;
+    --fs-normal: normal;
+    --fs-medium: medium;
+    --fs-large: large;
+    --fs-huge: 2em;
+
+    --fw-bold: 700;
+    --fw-normal: 400;
+    --fw-light: 300;
+
+    --font-poppins: "Poppins", sans-serif;
+}

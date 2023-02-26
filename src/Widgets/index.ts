@@ -1,12 +1,8 @@
-import Footer from './ui/Footer'
-import Header from './ui/Header'
-import Layout from './ui/Layout'
-import PageLoader from './ui/PageLoader'
-import PageError from './ui/PageError/PageError'
+import Layout from './Layout'
+import PageLoader from './PageLoader'
+import PageError from './PageError/PageError'
 
 export {
-  Footer,
-  Header,
   Layout,
   PageLoader,
   PageError

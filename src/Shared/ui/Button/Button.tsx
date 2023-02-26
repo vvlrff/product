@@ -1,21 +1,27 @@
-import { FC } from 'react'
-import { Button as ButtonMui, ButtonProps } from '@mui/material'
-
+import { ButtonHTMLAttributes, FC, ReactNode } from 'react'
 import cn from 'classnames'
 
 import s from './Button.module.scss'
 
-interface IButton extends ButtonProps {}
+interface IButton extends ButtonHTMLAttributes<HTMLButtonElement> {
+  className?: string
+  disabled?: boolean
+  children: ReactNode
+}
 
-const Button: FC<IButton> = ({ children, className, variant = 'contained', ...otherProps }) => {
+const Button: FC<IButton> = (props) => {
+  const { children, className, disabled, ...otherProps } = props
+
+  const mods: Record<string, boolean> = {
+    [s.disabled]: disabled
+  }
+
   return (
-      <ButtonMui
-          className={cn(s.button, className)}
-          variant={variant}
+      <button
+          disabled={disabled}
+          className={cn(s.button, mods, className)}
           {...otherProps}
-      >
-          {children}
-      </ButtonMui>
+      >{children}</button>
   )
 }
 

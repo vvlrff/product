@@ -1,10 +1,11 @@
 @import "./reset";
 @import "./variables/fonts";
+@import "./variables/zIndex.scss";
 @import "./themes/dark";
 @import "./themes/light";
 
 body {
-    font-family: $font-poppins;
+    font-family: var(--font-poppins);
 }
 
 .app {

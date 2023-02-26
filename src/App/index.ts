@@ -1,7 +1,7 @@
-import ErrorBoundary from './ErrorBoundary'
+import { ThemeProvider, ErrorBoundary } from './Providers'
 import { StoreProvider, createReduxStore } from './providers/StoreProvider'
+
 import { App } from './App'
-import ThemeProvider from './providers/ui/ThemeProvider'
 
 export {
   ThemeProvider,

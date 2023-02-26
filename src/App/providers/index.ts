@@ -1,4 +1,5 @@
-import { ThemeContext } from './lib/ThemeContext'
-import ThemeProvider from './ui/ThemeProvider'
+import { ThemeContext } from './ThemeProvider/lib/ThemeContext'
+import { ThemeProvider } from './ThemeProvider/ui/ThemeProvider'
+import ErrorBoundary from './ErrorBoundary'
 
-export { ThemeContext, ThemeProvider }
+export { ThemeContext, ThemeProvider, ErrorBoundary }

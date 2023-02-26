@@ -1,6 +1,6 @@
 import { FC } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { Button } from 'Shared'
+import { Button, useTypedTranslation } from 'Shared'
 import { getCounterValue } from '../model/selectors/getCounterValue/getCounterValue'
 import { CounterActions } from '../model/slice/CounterSlice'
 
@@ -9,6 +9,8 @@ import s from './Counter.module.scss'
 const Counter: FC = () => {
   const dispatch = useDispatch()
   const conterValue = useSelector(getCounterValue)
+
+  const { t } = useTypedTranslation()
 
   const increment = () => {
     dispatch(CounterActions.increment())
@@ -20,14 +22,14 @@ const Counter: FC = () => {
 
   return (
       <div className={s.counter}>
-          <span className={s.title}>Значение счетчика {conterValue}</span>
+          <span className={s.title}>{`${t('entitie_counter_title')} ${conterValue}`}</span>
           <div className={s.controls}>
               <Button
                   onClick={increment}
-            >Увеличить</Button>
+            >{t('entitie_counter_button_increase')}</Button>
               <Button
                   onClick={decrement}
-            >Уменьшить</Button>
+            >{t('entitie_counter_button_decrease')}</Button>
           </div>
       </div>
   )

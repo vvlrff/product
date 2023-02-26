@@ -2,12 +2,9 @@
 
 .input {
     background-color: var(--primary);
+    color: var(--font-color);
 
-    & input {
+    &::placeholder {
         color: var(--font-color);
-
-        &::placeholder {
-            color: var(--font-color);
-        }
     }
 }

@@ -1,26 +1,35 @@
-import { TextField, TextFieldProps } from '@mui/material'
-import { ChangeEventHandler, FC } from 'react'
+import { FC, ChangeEvent, HTMLAttributes } from 'react'
 
 import s from './TextInput.module.scss'
 
-type ITextInput = TextFieldProps & {
+interface ITextInput extends Omit<HTMLAttributes<HTMLInputElement>, 'value' | 'onChange' | 'placeholder'> {
   value: string
-  onChange: ChangeEventHandler
+  onChange: (value: string) => void
+  placeholder?: string
+  type?: 'text' | 'password' | 'email'
 }
 
 export const TextInput: FC<ITextInput> = (props) => {
   const {
     value,
-    onChange
+    onChange,
+    placeholder,
+    type = 'text',
+    ...otherProps
   } = props
 
+  const changeEventHandler = (e: ChangeEvent<HTMLInputElement>) => {
+    onChange?.(e.target.value)
+  }
+
   return (
-      <TextField
-          variant='outlined'
-          value={value}
-          onChange={onChange}
+      <input
+          type={type}
           className={s.input}
-          {...props}
-    />
+          value={value}
+          onChange={changeEventHandler}
+          placeholder={placeholder}
+          {...otherProps}
+      />
   )
 }

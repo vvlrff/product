@@ -1,8 +1,15 @@
+import { FC } from 'react'
 import CircularProgress from '@mui/material/CircularProgress'
 
-const Loader: React.FC = () => {
+interface ILoader {
+  className?: string
+}
+
+const Loader: FC<ILoader> = (props) => {
+  const { className } = props
+
   return (
-      <CircularProgress />
+      <CircularProgress className={className}/>
   )
 }
 

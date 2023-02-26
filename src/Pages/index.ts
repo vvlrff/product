@@ -1,10 +1,8 @@
-import { HomePageLazy as HomePage } from './ui/HomePage/HomePageLazy'
-import { ProductPageLazy as ProductPage } from './ui/ProductPage/ProductPageLazy'
-import { NotFoundPageLazy as NotFoundPage } from './ui/NotFoundPage/NotFoundPageLazy'
-import AppRouter from './model/ui/AppRouter'
+import { HomePageLazy as HomePage } from './HomePage/ui/HomePageLazy'
+import { ProductPageLazy as ProductPage } from './ProductPage/ui/ProductPageLazy'
+import { NotFoundPageLazy as NotFoundPage } from './NotFoundPage/ui/NotFoundPageLazy'
 
 export {
-  AppRouter,
   HomePage,
   ProductPage,
   NotFoundPage
