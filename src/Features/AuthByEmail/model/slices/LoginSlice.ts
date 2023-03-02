@@ -4,7 +4,7 @@ import { LoginSchema } from '../types/LoginSchema'
 
 const initialState: LoginSchema = {
   password: '',
-  email: '',
+  email: '123',
   isLoading: false,
   error: null
 }
@@ -14,6 +14,7 @@ const loginSlice = createSlice({
   initialState,
   reducers: {
     setEmail: (state, action: PayloadAction<string>) => {
+      console.log(action.payload)
       state.email = action.payload
     },
     setPassword: (state, action: PayloadAction<string>) => {

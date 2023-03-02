@@ -2,7 +2,7 @@ import { UserActions } from 'Entities/User'
 import { useEffect } from 'react'
 
 import { useAppDispatch, useTheme } from 'Shared'
-import AppRouter from './Providers/RouteProvider'
+import AppRouter from './providers/RouteProvider'
 
 import './styles/index.scss'
 
@@ -17,6 +17,6 @@ export const App = () => {
   }, [dispatch])
 
   return (
-      <AppRouter/>
+    <AppRouter />
   )
 }

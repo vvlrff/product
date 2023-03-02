@@ -1,9 +1,14 @@
 import { FC, useCallback } from 'react'
 import { useSelector } from 'react-redux'
 
-import { getRegistrationState } from '../../model/selectors/getRegistrationState'
 import { CreateUserAction } from '../../model/slices/registerUserByEmail/RegisterUserByEmail'
 import { RegisterByEmail } from '../../model/services/RegisterUserByEmail/RegisterByEmail'
+
+import { getRegistrationEmail } from '../../model/selectors/getRegistrationEmail/getRegistrationEmail'
+import { getRegistrationPassword } from '../../model/selectors/getRegistrationPassword/getRegistrationPassword'
+import { getRegistrationLoading } from '../../model/selectors/getRegistrationLoading/getRegistrationLoading'
+import { getRegistrationError } from '../../model/selectors/getRegistrationError/getRegistrationError'
+
 import { Button, TextInput, useAppDispatch, useTypedTranslation } from 'Shared'
 
 import s from './RegistrationForm.module.scss'
@@ -11,7 +16,11 @@ import s from './RegistrationForm.module.scss'
 const RegistrationForm: FC = () => {
   const dispatch = useAppDispatch()
   const { t } = useTypedTranslation()
-  const { email, password, isLoading, error } = useSelector(getRegistrationState)
+
+  const email = useSelector(getRegistrationEmail)
+  const password = useSelector(getRegistrationPassword)
+  const isLoading = useSelector(getRegistrationLoading)
+  const error = useSelector(getRegistrationError)
 
   const onChahgeEmail = useCallback((value: string) => {
     dispatch(CreateUserAction.setEmail(value))
@@ -26,27 +35,27 @@ const RegistrationForm: FC = () => {
   }, [dispatch, email, password])
 
   return (
-      <div className={s.form}>
-          <span className={s.title}>{t('feature_register_by_email_title')}</span>
-          {error && <span>{error}</span>}
-          <div className={s.fields}>
-              <TextInput
-                  placeholder={t('feature_register_by_email_placeholder')}
-                  value={email}
-                  onChange={onChahgeEmail}
+    <div className={s.form}>
+      <span className={s.title}>{t('feature_register_by_email_title')}</span>
+      {error && <span>{error}</span>}
+      <div className={s.fields}>
+        <TextInput
+          placeholder={t('feature_register_by_email_placeholder')}
+          value={email}
+          onChange={onChahgeEmail}
         />
-              <TextInput
-                  type='password'
-                  placeholder={t('feature_register_by_email_password_placeholder')}
-                  value={password}
-                  onChange={onChangePassword}
+        <TextInput
+          type='password'
+          placeholder={t('feature_register_by_email_password_placeholder')}
+          value={password}
+          onChange={onChangePassword}
         />
-              <Button
-                  onClick={handleRegister}
-                  disabled={isLoading}
-              >{t('feature_register_by_email_button_text')}</Button>
-          </div>
+        <Button
+          onClick={handleRegister}
+          disabled={isLoading}
+        >{t('feature_register_by_email_button_text')}</Button>
       </div>
+    </div>
   )
 }
 
