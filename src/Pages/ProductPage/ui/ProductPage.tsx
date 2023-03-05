@@ -1,10 +1,14 @@
 import { FC } from 'react'
+import { Container } from 'Shared'
 import { Layout } from 'Widgets'
+import { Product } from 'Widgets/Product'
 
 const ProductPage: FC = (props) => {
   return (
       <Layout>
-          <h1>TEST</h1>
+          <Container>
+              <Product/>
+          </Container>
       </Layout>
   )
 }
