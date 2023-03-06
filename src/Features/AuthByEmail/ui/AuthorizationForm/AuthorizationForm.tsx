@@ -1,4 +1,4 @@
-import { useCallback, FC } from 'react'
+import { useCallback, FC, memo } from 'react'
 import { useSelector } from 'react-redux'
 
 import { Button, TextInput, useAppDispatch, useTypedTranslation } from 'Shared'
@@ -16,7 +16,11 @@ import { ReducersList } from 'Shared/lib/components/DynamicModuleLoader/DynamicM
 
 const initialReducers: ReducersList = { loginStateSchema: LoginReducer }
 
-const AuthorizationForm: FC = () => {
+interface IAuthorizationForm {
+  onLoginSuccess?: () => void
+}
+
+const AuthorizationForm = memo(({ onLoginSuccess }: IAuthorizationForm) => {
   const dispatch = useAppDispatch()
   const { t } = useTypedTranslation()
 
@@ -33,12 +37,15 @@ const AuthorizationForm: FC = () => {
     dispatch(LoginActions.setPassword(value))
   }, [dispatch])
 
-  const onLoginClick = useCallback(() => {
-    dispatch(LoginByEmail({ email, password }))
-  }, [dispatch, email, password])
+  const onLoginClick = useCallback(async () => {
+    const response = await dispatch(LoginByEmail({ email, password }))
+    if (response.meta.requestStatus === 'fulfilled') {
+      onLoginSuccess()
+    }
+  }, [dispatch, onLoginSuccess, email, password])
 
   return (
-    <DynamicModuleLoader key={'loginStateSchema'} reducers={initialReducers}>
+    <DynamicModuleLoader reducers={initialReducers}>
       <div className={s.form}>
         <span className={s.title}>{t('feature_auth_by_email_title')}</span>
         {error && <span className={s.error}>{error}</span>}
@@ -62,6 +69,6 @@ const AuthorizationForm: FC = () => {
       </div>
     </DynamicModuleLoader>
   )
-}
+})
 
 export default AuthorizationForm

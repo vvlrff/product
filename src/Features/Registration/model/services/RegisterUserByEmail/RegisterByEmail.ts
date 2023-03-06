@@ -10,7 +10,7 @@ interface IRegisterProps {
 }
 
 const url = 'http://localhost:5000/register'
-const registerPrefix = 'login/registerByEmail'
+const registerPrefix = 'register/registerByEmail'
 
 export const RegisterByEmail = createAsyncThunk<IUser, IRegisterProps, { rejectValue: string }>(
   registerPrefix,

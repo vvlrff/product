@@ -1,4 +1,4 @@
-import { FC, ReactNode } from 'react'
+import { memo, ReactNode } from 'react'
 
 import { useTypedTranslation } from 'Shared/lib/hooks/useTypedTranslation'
 import Button from 'Shared/ui/Button'
@@ -7,7 +7,7 @@ interface IToggleLanguegeButton {
   children: ReactNode
 }
 
-const ToggleLanguegeButton: FC<IToggleLanguegeButton> = ({ children }) => {
+const ToggleLanguegeButton = memo(({ children }: IToggleLanguegeButton) => {
   const { i18n } = useTypedTranslation()
 
   const toggleLanguege = () => {
@@ -15,10 +15,10 @@ const ToggleLanguegeButton: FC<IToggleLanguegeButton> = ({ children }) => {
   }
 
   return (
-      <Button
-          onClick={toggleLanguege}
-      >{children}</Button>
+    <Button
+      onClick={toggleLanguege}
+    >{children}</Button>
   )
-}
+})
 
 export default ToggleLanguegeButton

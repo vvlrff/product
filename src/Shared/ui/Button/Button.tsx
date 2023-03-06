@@ -1,4 +1,4 @@
-import { ButtonHTMLAttributes, FC, ReactNode } from 'react'
+import { ButtonHTMLAttributes, FC, memo, ReactNode } from 'react'
 import cn from 'classnames'
 
 import s from './Button.module.scss'
@@ -9,7 +9,7 @@ interface IButton extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: ReactNode
 }
 
-const Button: FC<IButton> = (props) => {
+const Button = memo((props: IButton) => {
   const { children, className, disabled, ...otherProps } = props
 
   const mods: Record<string, boolean> = {
@@ -17,12 +17,12 @@ const Button: FC<IButton> = (props) => {
   }
 
   return (
-      <button
-          disabled={disabled}
-          className={cn(s.button, mods, className)}
-          {...otherProps}
-      >{children}</button>
+    <button
+      disabled={disabled}
+      className={cn(s.button, mods, className)}
+      {...otherProps}
+    >{children}</button>
   )
-}
+})
 
 export default Button

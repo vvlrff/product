@@ -4,6 +4,7 @@ import { LoginSchema } from 'Features/AuthByEmail'
 import { RegisterUserSchema } from 'Features/Registration'
 import { AnyAction, CombinedState, Reducer, ReducersMapObject } from 'redux'
 import { UserLoginStateSchema } from 'Shared/types/RegistrationAutorizationTypes'
+import { createReduxStore } from './store'
 
 export interface StateSchema {
   counter: CounterSchema
@@ -26,3 +27,5 @@ export interface ReducerManager {
 export interface ReduxStoreWithManager extends EnhancedStore<StateSchema> {
   reducerManager: ReducerManager
 }
+
+export type AppDispatch = ReturnType<typeof createReduxStore>['dispatch']
