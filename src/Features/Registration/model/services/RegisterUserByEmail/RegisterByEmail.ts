@@ -1,3 +1,4 @@
+import { ThunkApiType } from './../../../../../App/providers/StoreProvider/config/StateSchema';
 import { createAsyncThunk } from '@reduxjs/toolkit'
 import axios from 'axios'
 
@@ -9,21 +10,20 @@ interface IRegisterProps {
   password?: string
 }
 
-const url = 'http://localhost:5000/register'
-const registerPrefix = 'register/registerByEmail'
-
-export const RegisterByEmail = createAsyncThunk<IUser, IRegisterProps, { rejectValue: string }>(
-  registerPrefix,
+export const RegisterByEmail = createAsyncThunk<IUser, IRegisterProps, ThunkApiType<string>>(
+  'register/registerByEmail',
   async (authData, thunkApi) => {
+    const { rejectWithValue } = thunkApi
+
     try {
-      const response = await axios.post<IUser>(url, authData)
+      const response = await axios.post<IUser>('/register', authData)
       if (!response.data) {
         throw new Error('Something went wrong')
       }
 
       return response.data
     } catch {
-      return thunkApi.rejectWithValue(i18n.t('feature_register_by_email_incorrect_input'))
+      return rejectWithValue(i18n.t('feature_register_by_email_incorrect_input'))
     }
   }
 )
