@@ -2,11 +2,13 @@ import { configureStore, ReducersMapObject } from '@reduxjs/toolkit'
 
 import { CounterReducer } from 'Entities'
 import { UserReducer } from 'Entities/User'
+import { NavigateOptions, To } from 'react-router-dom'
+import { API } from 'Shared/api/api'
 
 import { createReducerManager } from './ReducerManger'
 import { StateSchema } from './StateSchema'
 
-export const createReduxStore = (initialState?: StateSchema) => {
+export const createReduxStore = (initialState?: StateSchema, navigate?: (to: To, options: NavigateOptions) => void) => {
   const rootReducers: ReducersMapObject<StateSchema> = {
     counter: CounterReducer,
     userStateSchema: UserReducer
@@ -14,9 +16,18 @@ export const createReduxStore = (initialState?: StateSchema) => {
 
   const reducerManager = createReducerManager(rootReducers)
 
-  const store = configureStore<StateSchema>({
+  const store = configureStore({
     reducer: reducerManager.reduce,
-    preloadedState: initialState
+    preloadedState: initialState,
+    devTools: IS_DEV,
+    middleware: (getDefaultMiddleware) => getDefaultMiddleware({
+      thunk: {
+        extraArgument: {
+          api: API,
+          navigate: navigate
+        }
+      }
+    })
   })
   // @ts-expect-error
   store.reducerManager = reducerManager
