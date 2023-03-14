@@ -1,0 +1,152 @@
+.step {
+    position: relative;
+    margin-bottom: 24px;
+    max-width: 928px;
+    display: flex;
+    align-items: flex-start;
+    gap: 0 24px;
+
+    .step__bullet {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 100%;
+        user-select: none;
+    }
+
+    .step__content {
+        max-width: 416px;
+        display: flex;
+        flex-direction: column;
+
+        &.step__content_right {
+            text-align: left;
+        }
+
+        &.step__content_left {
+            text-align: right;
+        }
+
+        &>span:nth-child(2) {
+            margin-bottom: 8px;
+        }
+
+        .step__title {
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 28px;
+        }
+
+        .steper__subtitle {
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 24px;
+        }
+
+        .step__info {
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 24px;
+        }
+    }
+}
+
+.step__orientation_vertical {
+    &.step {
+        &:not(:last-child)::after {
+            position: absolute;
+            left: 50%;
+            display: block;
+            width: 4px;
+            height: 100%;
+            transform: translateX(-6px);
+            content: '';
+        }
+    }
+}
+
+
+.step__large {
+    &.step::after {
+        top: 48px;
+    }
+
+    .step__bullet {
+        width: 48px;
+        height: 48px;
+    }
+}
+
+.step__medium {
+    &.step::after {
+        top: 40px;
+    }
+
+    .step__bullet {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+.step__small {
+    &.step::after {
+        top: 32px;
+    }
+
+    .step__bullet {
+        width: 32px;
+        height: 32px;
+    }
+}
+
+
+
+.step__light {
+    &.step::after {
+        background-color: #000;
+    }
+
+    .step__bullet {
+        background-color: #000;
+        color: #fff;
+    }
+
+    .step__content {
+        .step__title {
+            color: #37394B;
+        }
+
+        .step__subtitle {
+            color: rgba(27, 31, 59, 0.6);
+        }
+
+        .step__info {
+            color: rgba(27, 31, 59, 0.8);
+        }
+    }
+}
+
+.step__dark {
+    &.step::after {
+        background-color: #fff;
+    }
+
+    .step__bullet {
+        background-color: #fff;
+        color: #333333;
+    }
+
+    .step__content {
+        .step__title {
+            color: #FFFFFF;
+        }
+
+        .step__subtitle {
+            color: rgba(255, 255, 255, 0.4);
+        }
+
+        .step__info {
+            color: rgba(255, 255, 255, 0.8);
+        }
+    }
+}
