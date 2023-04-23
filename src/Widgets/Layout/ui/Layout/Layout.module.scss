@@ -6,6 +6,11 @@
     flex-direction: column;
 }
 
+.wrapper {
+    height: 100%;
+    display: flex;
+}
+
 .main {
     flex: 1;
     background-color: var(--primary);

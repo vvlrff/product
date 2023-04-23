@@ -1,4 +1,4 @@
-import { FC, ChangeEvent, HTMLAttributes } from 'react'
+import { FC, ChangeEvent, HTMLAttributes, memo } from 'react'
 
 import s from './TextInput.module.scss'
 
@@ -9,7 +9,7 @@ interface ITextInput extends Omit<HTMLAttributes<HTMLInputElement>, 'value' | 'o
   type?: 'text' | 'password' | 'email'
 }
 
-export const TextInput: FC<ITextInput> = (props) => {
+export const TextInput = memo((props: ITextInput) => {
   const {
     value,
     onChange,
@@ -23,13 +23,13 @@ export const TextInput: FC<ITextInput> = (props) => {
   }
 
   return (
-      <input
-          type={type}
-          className={s.input}
-          value={value}
-          onChange={changeEventHandler}
-          placeholder={placeholder}
-          {...otherProps}
-      />
+    <input
+      type={type}
+      className={s.input}
+      value={value}
+      onChange={changeEventHandler}
+      placeholder={placeholder}
+      {...otherProps}
+    />
   )
-}
+})

@@ -2,6 +2,8 @@ export enum AppRoutes {
   MAIN = 'main',
   PROFILE = 'profile',
   PRODUCT = 'product',
+
+  // 404
   NOT_FOUND = 'not_found',
 }
 

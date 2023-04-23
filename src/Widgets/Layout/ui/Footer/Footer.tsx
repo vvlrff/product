@@ -1,8 +1,9 @@
+import { memo } from 'react'
 import { useTypedTranslation } from 'Shared/lib/hooks/useTypedTranslation'
 
 import s from './Footer.module.scss'
 
-const Footer: React.FC = () => {
+export const Footer = memo(() => {
   const { t } = useTypedTranslation()
 
   return (
@@ -10,6 +11,4 @@ const Footer: React.FC = () => {
           {t('widget_footer_title')}
       </footer>
   )
-}
-
-export default Footer
+})
