@@ -21,17 +21,17 @@ const Counter: FC = () => {
   }, [dispatch])
 
   return (
-    <div className={s.counter}>
-      <span className={s.title}>{`${t('entitie_counter_title')} ${conterValue}`}</span>
-      <div className={s.controls}>
-        <Button
-          onClick={increment}
+      <div className={s.counter}>
+          <span className={s.title}>{`${t('entitie_counter_title')} ${conterValue}`}</span>
+          <div className={s.controls}>
+              <Button
+                  onClick={increment}
         >{t('entitie_counter_button_increase')}</Button>
-        <Button
-          onClick={decrement}
+              <Button
+                  onClick={decrement}
         >{t('entitie_counter_button_decrease')}</Button>
+          </div>
       </div>
-    </div>
   )
 }
 

@@ -10,7 +10,7 @@ import { UserActions } from 'Entities/User'
 
 import s from './Header.module.scss'
 
-const Header: FC = () => {
+export const Header: FC = () => {
   const { t } = useTypedTranslation()
   const [isOpenLoginModal, setOpenLoginModal] = useState(false)
   const [isOpenSignUpModal, setOpenSignUpModal] = useState(false)
@@ -73,5 +73,3 @@ const Header: FC = () => {
       </>
   )
 }
-
-export default Header

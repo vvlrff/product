@@ -17,10 +17,10 @@ const Button = memo((props: IButton) => {
   }
 
   return (
-    <button
-      disabled={disabled}
-      className={cn(s.button, mods, className)}
-      {...otherProps}
+      <button
+          disabled={disabled}
+          className={cn(s.button, mods, className)}
+          {...otherProps}
     >{children}</button>
   )
 })

@@ -13,11 +13,11 @@ const AuthorizationModal: FC<IAuthorizationModal> = (props) => {
   const { open, onClose } = props
 
   return (
-    <Modal open={open} onClose={onClose}>
-      <Suspense fallback={<Loader className={s.loader} />}>
-        <AuthorizationFormAsync onLoginSuccess={onClose} />
-      </Suspense>
-    </Modal>
+      <Modal open={open} onClose={onClose}>
+          <Suspense fallback={<Loader className={s.loader} />}>
+              <AuthorizationFormAsync onLoginSuccess={onClose} />
+          </Suspense>
+      </Modal>
   )
 }
 

@@ -17,6 +17,6 @@ export const App = () => {
   }, [dispatch])
 
   return (
-    <AppRouter />
+      <AppRouter />
   )
 }

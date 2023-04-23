@@ -19,9 +19,9 @@ const StoreProvider: FC<IStoreProvider> = (props) => {
   const store = createReduxStore(initialState, navigate)
 
   return (
-    <Provider store={store}>
-      {children}
-    </Provider>
+      <Provider store={store}>
+          {children}
+      </Provider>
   )
 }
 
