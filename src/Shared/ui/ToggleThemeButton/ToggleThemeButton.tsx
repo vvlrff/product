@@ -16,10 +16,10 @@ const ToggleThemeButton = memo((props: IToggleThemeButton) => {
   const { toggleTheme } = useTheme()
 
   return (
-    <Button
-      className={className}
-      onClick={toggleTheme}
-      {...props}
+      <Button
+          className={className}
+          onClick={toggleTheme}
+          {...props}
     >{children}</Button>
   )
 })

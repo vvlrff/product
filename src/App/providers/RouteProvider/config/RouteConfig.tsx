@@ -9,15 +9,15 @@ export const routeConfig: Record<AppRoutes, RouteProps> = {
     path: RoutesPath.main,
     element: <HomePage />
   },
-  [AppRoutes.PRODUCT]: {
-    path: RoutesPath.product,
-    element: <ProductPage />
-  },
   [AppRoutes.PROFILE]: {
     path: RoutesPath.profile,
     element: <ProfilePage />
   },
-  //404
+  [AppRoutes.PRODUCT]: {
+    path: RoutesPath.product,
+    element: <ProductPage />
+  },
+  // 404
   [AppRoutes.NOT_FOUND]: {
     path: RoutesPath.not_found,
     element: <NotFoundPage />

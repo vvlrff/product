@@ -12,14 +12,14 @@ interface ILayout {
 
 const Layout: FC<ILayout> = ({ children }) => {
   return (
-    <div className={s.layout}>
-      <Header />
-      <div className={s.wrapper}>
-        <Sidebar />
-        <main className={s.main}>{children}</main>
+      <div className={s.layout}>
+          <Header />
+          <div className={s.wrapper}>
+              <Sidebar />
+              <main className={s.main}>{children}</main>
+          </div>
+          <Footer />
       </div>
-      <Footer />
-    </div>
   )
 }
 

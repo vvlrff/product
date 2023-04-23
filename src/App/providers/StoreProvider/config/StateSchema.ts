@@ -27,12 +27,12 @@ export interface ReducerManager {
 }
 
 interface ThunkExtraArgs {
-  api: AxiosInstance,
+  api: AxiosInstance
   navigate: (to: To, options: NavigateOptions) => void
 }
 
 export interface ThunkApiType<T> {
-  rejectValue: T,
+  rejectValue: T
   extra: ThunkExtraArgs
 }
 

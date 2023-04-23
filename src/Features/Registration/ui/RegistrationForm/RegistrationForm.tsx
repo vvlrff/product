@@ -39,29 +39,29 @@ const RegistrationForm = memo(() => {
   }, [dispatch, email, password])
 
   return (
-    <DynamicModuleLoader reducers={initialReducers}>
-      <div className={s.form}>
-        <span className={s.title}>{t('feature_register_by_email_title')}</span>
-        {error && <span>{error}</span>}
-        <div className={s.fields}>
-          <TextInput
-            placeholder={t('feature_register_by_email_placeholder')}
-            value={email}
-            onChange={onChahgeEmail}
+      <DynamicModuleLoader reducers={initialReducers}>
+          <div className={s.form}>
+              <span className={s.title}>{t('feature_register_by_email_title')}</span>
+              {error && <span>{error}</span>}
+              <div className={s.fields}>
+                  <TextInput
+                      placeholder={t('feature_register_by_email_placeholder')}
+                      value={email}
+                      onChange={onChahgeEmail}
           />
-          <TextInput
-            type='password'
-            placeholder={t('feature_register_by_email_password_placeholder')}
-            value={password}
-            onChange={onChangePassword}
+                  <TextInput
+                      type='password'
+                      placeholder={t('feature_register_by_email_password_placeholder')}
+                      value={password}
+                      onChange={onChangePassword}
           />
-          <Button
-            onClick={handleRegister}
-            disabled={isLoading}
+                  <Button
+                      onClick={handleRegister}
+                      disabled={isLoading}
           >{t('feature_register_by_email_button_text')}</Button>
-        </div>
-      </div>
-    </DynamicModuleLoader>
+              </div>
+          </div>
+      </DynamicModuleLoader>
   )
 })
 

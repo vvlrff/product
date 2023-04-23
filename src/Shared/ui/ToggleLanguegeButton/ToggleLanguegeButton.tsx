@@ -15,8 +15,8 @@ const ToggleLanguegeButton = memo(({ children }: IToggleLanguegeButton) => {
   }
 
   return (
-    <Button
-      onClick={toggleLanguege}
+      <Button
+          onClick={toggleLanguege}
     >{children}</Button>
   )
 })

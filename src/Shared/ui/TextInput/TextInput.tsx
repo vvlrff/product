@@ -23,13 +23,13 @@ export const TextInput = memo((props: ITextInput) => {
   }
 
   return (
-    <input
-      type={type}
-      className={s.input}
-      value={value}
-      onChange={changeEventHandler}
-      placeholder={placeholder}
-      {...otherProps}
+      <input
+          type={type}
+          className={s.input}
+          value={value}
+          onChange={changeEventHandler}
+          placeholder={placeholder}
+          {...otherProps}
     />
   )
 })

@@ -45,29 +45,29 @@ const AuthorizationForm = memo(({ onLoginSuccess }: IAuthorizationForm) => {
   }, [dispatch, onLoginSuccess, email, password])
 
   return (
-    <DynamicModuleLoader reducers={initialReducers}>
-      <div className={s.form}>
-        <span className={s.title}>{t('feature_auth_by_email_title')}</span>
-        {error && <span className={s.error}>{error}</span>}
-        <div className={s.fields}>
-          <TextInput
-            placeholder={t('feature_auth_by_email_placeholder')}
-            value={email}
-            onChange={onEmailChange}
+      <DynamicModuleLoader reducers={initialReducers}>
+          <div className={s.form}>
+              <span className={s.title}>{t('feature_auth_by_email_title')}</span>
+              {error && <span className={s.error}>{error}</span>}
+              <div className={s.fields}>
+                  <TextInput
+                      placeholder={t('feature_auth_by_email_placeholder')}
+                      value={email}
+                      onChange={onEmailChange}
           />
-          <TextInput
-            type='password'
-            placeholder={t('feature_auth_by_email_password_placeholder')}
-            value={password}
-            onChange={onPasswordChange}
+                  <TextInput
+                      type='password'
+                      placeholder={t('feature_auth_by_email_password_placeholder')}
+                      value={password}
+                      onChange={onPasswordChange}
           />
-          <Button
-            onClick={onLoginClick}
-            disabled={isLoading}
+                  <Button
+                      onClick={onLoginClick}
+                      disabled={isLoading}
           >{t('feature_auth_by_email_button_text')}</Button>
-        </div>
-      </div>
-    </DynamicModuleLoader>
+              </div>
+          </div>
+      </DynamicModuleLoader>
   )
 })
 

@@ -24,7 +24,7 @@ export const createReduxStore = (initialState?: StateSchema, navigate?: (to: To,
       thunk: {
         extraArgument: {
           api: API,
-          navigate: navigate
+          navigate
         }
       }
     })

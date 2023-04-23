@@ -7,6 +7,6 @@ interface IAutocomplete {
 
 export const Autocomplete = memo((props: IAutocomplete) => {
   return (
-    <input {...props} />
+      <input {...props} />
   )
 })

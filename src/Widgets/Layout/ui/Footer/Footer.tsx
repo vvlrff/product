@@ -7,8 +7,8 @@ export const Footer = memo(() => {
   const { t } = useTypedTranslation()
 
   return (
-    <footer className={s.footer}>
-      {t('widget_footer_title')}
-    </footer>
+      <footer className={s.footer}>
+          {t('widget_footer_title')}
+      </footer>
   )
 })

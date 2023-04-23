@@ -1,4 +1,4 @@
-import { ThunkApiType } from './../../../../../App/providers/StoreProvider/config/StateSchema';
+import { ThunkApiType } from './../../../../../App/providers/StoreProvider/config/StateSchema'
 import { createAsyncThunk } from '@reduxjs/toolkit'
 import axios from 'axios'
 

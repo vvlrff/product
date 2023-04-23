@@ -13,7 +13,7 @@ interface ILoginByEmailProps {
 export const LoginByEmail = createAsyncThunk<UserLoginStateSchema, ILoginByEmailProps, ThunkApiType<string>>(
   'login/authByEmail',
   async (authData, thunkApi) => {
-    const { dispatch, rejectWithValue, extra } = thunkApi;
+    const { dispatch, rejectWithValue, extra } = thunkApi
 
     try {
       const response = await extra.api.post<UserLoginStateSchema>('/login', authData)

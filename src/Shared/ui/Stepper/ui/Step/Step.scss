@@ -27,7 +27,7 @@
             text-align: right;
         }
 
-        &>span:nth-child(2) {
+        & > span:nth-child(2) {
             margin-bottom: 8px;
         }
 
@@ -60,11 +60,10 @@
             width: 4px;
             height: 100%;
             transform: translateX(-6px);
-            content: '';
+            content: "";
         }
     }
 }
-
 
 .step__large {
     &.step::after {
@@ -99,8 +98,6 @@
     }
 }
 
-
-
 .step__light {
     &.step::after {
         background-color: #000;
@@ -113,15 +110,15 @@
 
     .step__content {
         .step__title {
-            color: #37394B;
+            color: #37394b;
         }
 
         .step__subtitle {
-            color: rgba(27, 31, 59, 0.6);
+            color: rgb(27 31 59 / 60%);
         }
 
         .step__info {
-            color: rgba(27, 31, 59, 0.8);
+            color: rgb(27 31 59 / 80%);
         }
     }
 }
@@ -133,20 +130,20 @@
 
     .step__bullet {
         background-color: #fff;
-        color: #333333;
+        color: #333;
     }
 
     .step__content {
         .step__title {
-            color: #FFFFFF;
+            color: #fff;
         }
 
         .step__subtitle {
-            color: rgba(255, 255, 255, 0.4);
+            color: rgb(255 255 255 / 40%);
         }
 
         .step__info {
-            color: rgba(255, 255, 255, 0.8);
+            color: rgb(255 255 255 / 80%);
         }
     }
 }
