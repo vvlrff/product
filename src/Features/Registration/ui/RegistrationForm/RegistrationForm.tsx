@@ -1,17 +1,24 @@
 import { FC, useCallback } from 'react'
 import { useSelector } from 'react-redux'
 
-import { getRegistrationState } from '../../model/selectors/getRegistrationState'
+import { Button, TextInput, useAppDispatch, useTypedTranslation } from 'Shared'
+
 import { CreateUserAction } from '../../model/slices/registerUserByEmail/RegisterUserByEmail'
 import { RegisterByEmail } from '../../model/services/RegisterUserByEmail/RegisterByEmail'
-import { Button, TextInput, useAppDispatch, useTypedTranslation } from 'Shared'
+import { getRegistrationEmail } from '../../model/selectors/getRegistrationEmail/getRegistrationEmail'
+import { getRegistartionError } from '../../model/selectors/getRegistartionError/getRegistartionError'
+import { getRegistrationIsLoading } from '../../model/selectors/getRegistrationIsLoading/getRegistrationIsLoading'
+import { getRegistrationPassword } from '../../model/selectors/getRegistrationPassword/getRegistrationPassword'
 
 import s from './RegistrationForm.module.scss'
 
 const RegistrationForm: FC = () => {
   const dispatch = useAppDispatch()
   const { t } = useTypedTranslation()
-  const { email, password, isLoading, error } = useSelector(getRegistrationState)
+  const email = useSelector(getRegistrationEmail)
+  const password = useSelector(getRegistrationPassword)
+  const error = useSelector(getRegistartionError)
+  const isLoading = useSelector(getRegistrationIsLoading)
 
   const onChahgeEmail = useCallback((value: string) => {
     dispatch(CreateUserAction.setEmail(value))

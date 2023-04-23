@@ -1,9 +1,9 @@
 import { FC, ReactNode } from 'react'
 
-import Footer from './Footer'
-import Header from './Header'
+import Footer from '../Footer/Footer'
+import Header from '../Header/Header'
 
-import s from '../styles/Layout.module.scss'
+import s from './Layout.module.scss'
 
 interface ILayout {
   children: ReactNode

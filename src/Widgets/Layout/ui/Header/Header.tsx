@@ -5,10 +5,10 @@ import { AuthorizationModal, RegistrationModal } from 'Features'
 import { Autocomplete, Button, Container, Logotype, ToggleLanguegeButton, ToggleThemeButton, useAppDispatch, useTypedTranslation } from 'Shared'
 
 import { useSelector } from 'react-redux'
-import { getUserAuthState } from '../model/selectors/getUserAuthState'
+import { getUserAuthState } from '../../model/selectors/getUserAuthState'
 import { UserActions } from 'Entities/User'
 
-import s from '../styles/Header.module.scss'
+import s from './Header.module.scss'
 
 const Header: FC = () => {
   const { t } = useTypedTranslation()
