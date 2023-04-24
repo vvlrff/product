@@ -4,9 +4,8 @@ import { Link } from 'react-router-dom'
 import { AuthorizationModal, RegistrationModal } from 'Features'
 import { Autocomplete, Button, Container, Logotype, ToggleLanguegeButton, ToggleThemeButton, useAppDispatch, useTypedTranslation } from 'Shared'
 
-import { useSelector } from 'react-redux'
-import { getUserAuthState } from '../../model/selectors/getUserAuthState'
 import { UserActions } from 'Entities/User'
+import { useAuth } from 'Shared/lib/hooks/useAuth'
 
 import s from './Header.module.scss'
 
@@ -16,9 +15,9 @@ export const Header: FC = () => {
   const [isOpenSignUpModal, setOpenSignUpModal] = useState(false)
   const dispatch = useAppDispatch()
 
-  const { accessToken } = useSelector(getUserAuthState)
+  const isAuth = useAuth()
 
-  if (accessToken) {
+  if (isAuth) {
     return (
         <header className={s.header}>
             <Container className={s.container}>

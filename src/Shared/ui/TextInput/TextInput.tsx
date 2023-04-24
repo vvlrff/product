@@ -1,4 +1,4 @@
-import { FC, ChangeEvent, HTMLAttributes, memo } from 'react'
+import { ChangeEvent, HTMLAttributes, memo } from 'react'
 
 import s from './TextInput.module.scss'
 

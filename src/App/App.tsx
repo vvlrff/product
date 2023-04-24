@@ -1,14 +1,16 @@
-import { UserActions } from 'Entities/User'
+import { UserActions, getUserInited } from 'Entities/User'
 import { useEffect } from 'react'
 
 import { useAppDispatch, useTheme } from 'Shared'
 import AppRouter from './providers/RouteProvider'
 
 import './styles/index.scss'
+import { useSelector } from 'react-redux'
 
 export const App = () => {
   const { theme } = useTheme()
   const dispatch = useAppDispatch()
+  const userInited = useSelector(getUserInited)
 
   document.body.className = theme
 
@@ -16,7 +18,9 @@ export const App = () => {
     dispatch(UserActions.initUserAuth())
   }, [dispatch])
 
-  return (
-      <AppRouter />
-  )
+  if (userInited) {
+    return <AppRouter />
+  }
+
+  return null
 }

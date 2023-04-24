@@ -1,10 +1,17 @@
 @import "/src/App/styles/index";
 
 .input {
+    padding-left: 8px;
     background-color: var(--primary);
-    color: var(--font-color);
+    color: var(--font-color-secondary);
+    height: 40px;
+    border: none;
+    border-radius: 4px;
+    font-size: var(--fs-small);
+    font-weight: var(--fw-bold);
 
     &::placeholder {
-        color: var(--font-color);
+        font-size: var(--fs-small);
+        color: var(--font-color-accent);
     }
 }

@@ -9,4 +9,5 @@ export interface UserLoginStateSchema {
     id: number
     email: string
   }
+  _inited?: boolean
 }

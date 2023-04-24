@@ -1,9 +1,15 @@
 body.light {
-    --primary: #fff;
-    --secondary: #ccc;
+    --primary: #F8F4FB;
+    --secondary: #d3c4dd;
+    --accent: #ABABCF;
+
     --shadow: rgb(0 0 0 / 40%);
-    --font-color: #000;
+
+    --font-color-primary: #F8F4FB;
+    --font-color-secondary: #d3c4dd;
+    --font-color-accent: #ABABCF;
+
     --background-thumb-color: #888;
     --background-thumb-selected-color: #555;
-    --selected-primary: #ffa500;
+    --selected-primary: #ABABCF;
 }

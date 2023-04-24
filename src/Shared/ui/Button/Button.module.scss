@@ -1,15 +1,24 @@
 .button {
     padding: 10px;
-    background-color: var(--primary);
-    border: none;
     border-radius: 2px;
     box-shadow: 1px 1px 10px var(--shadow);
     text-transform: uppercase;
     font-family: var(--font-poppins);
     font-weight: var(--fw-normal);
-    color: var(--font-color);
     user-select: none;
     cursor: pointer;
+}
+
+.primary {
+    border: 1px solid var(--accent);
+    background-color: var(--accent);
+    color: var(--font-color-primary);
+}
+
+.secondary {
+    border: 1px solid var(--accent);
+    background-color: var(--primary);
+    color: var(--font-color-secondary);
 }
 
 .disabled {

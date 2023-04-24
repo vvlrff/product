@@ -1,5 +1,5 @@
 import i18next from 'i18next'
-import { AppRoutes, RoutesPath } from 'Shared/config/RouterConfig/AppRoutes'
+import { RoutesPath } from 'Shared/config/RouterConfig/AppRoutes'
 import HomeIcon from '@mui/icons-material/Home'
 import PersonIcon from '@mui/icons-material/Person'
 import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket'
@@ -9,6 +9,7 @@ interface ISidebarNavigationItemSchema {
   icon: ReactNode
   route: string
   text: string
+  authOnly?: boolean
 }
 
 interface ISidebarNavigationSchema {
@@ -28,7 +29,8 @@ export const SidebarNavigationSchema: Record<ISidebarNavigationSchemaKeys, ISide
   Profile: {
     icon: <PersonIcon />,
     route: RoutesPath.profile,
-    text: i18next.t('widget_sidebar_navigation_text_profile')
+    text: i18next.t('widget_sidebar_navigation_text_profile'),
+    authOnly: true
   },
   Product: {
     icon: <ShoppingBasketIcon />,

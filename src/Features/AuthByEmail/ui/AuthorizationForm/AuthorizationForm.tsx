@@ -1,4 +1,4 @@
-import { useCallback, FC, memo } from 'react'
+import { useCallback, memo } from 'react'
 import { useSelector } from 'react-redux'
 
 import { Button, TextInput, useAppDispatch, useTypedTranslation } from 'Shared'

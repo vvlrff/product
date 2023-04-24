@@ -9,14 +9,14 @@
 }
 
 .icon {
-    color: var(--font-color);
+    color: var(--font-color-primary);
 }
 
 .link {
     text-decoration: none;
     font-weight: var(--fw-semi-bold);
     font-size: var(--fs-large);
-    color: var(--font-color);
+    color: var(--font-color-primary);
 
     &:hover {
         color: var(--selected-primary);
