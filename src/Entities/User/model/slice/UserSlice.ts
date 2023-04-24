@@ -4,7 +4,8 @@ import { UserLoginStateSchema } from 'Shared/types/RegistrationAutorizationTypes
 
 const initialState: UserLoginStateSchema = {
   accessToken: null,
-  user: null
+  user: null,
+  _inited: false
 }
 
 export const UserSlice = createSlice({
@@ -23,6 +24,7 @@ export const UserSlice = createSlice({
         state.accessToken = accessToken
         state.user = JSON.parse(user)
       }
+      state._inited = true
     },
     logoutUser: (state) => {
       state.accessToken = null

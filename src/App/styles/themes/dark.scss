@@ -1,9 +1,14 @@
 body.dark {
-    --primary: #000;
-    --secondary: #222;
+    --primary: #F8F4FB;
+    --secondary: #5b1f83;
+    --accent: #191763;
+
+    --font-color-primary: #F8F4FB;
+    --font-color-secondary: #5b1f83;
+    --font-color-accent: #191763;
+
     --shadow: rgb(0 0 0 / 40%);
-    --font-color: #fff;
     --background-thumb-color: #888;
     --background-thumb-selected-color: #555;
-    --selected-primary: #a020f0;
+    --selected-primary: #191763;
 }

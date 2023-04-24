@@ -4,6 +4,11 @@
       "email": "test123@mail.ru",
       "password": "$2a$10$ohY1jNsGjVOgPbR6S2rLQOyZXVdsj7MKPsYlhK/ja/AXjrtoHMyFe",
       "id": 1
+    },
+    {
+      "email": "olivier@mail.com",
+      "password": "$2a$10$0YXmJheV5jK9J32uGrf7q.l86nyNhZ7ai/D/ZCVC4P5a61xcEMbHi",
+      "id": 2
     }
   ]
 }
