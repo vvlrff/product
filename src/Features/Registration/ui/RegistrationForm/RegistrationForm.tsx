@@ -39,7 +39,7 @@ const RegistrationForm = memo(() => {
   }, [dispatch, email, password])
 
   return (
-      <DynamicModuleLoader reducers={initialReducers}>
+      <DynamicModuleLoader reducers={initialReducers} removeAfterUnmount>
           <div className={s.form}>
               <span className={s.title}>{t('feature_register_by_email_title')}</span>
               {error && <span>{error}</span>}

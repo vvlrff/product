@@ -2,6 +2,8 @@ import { useCallback, memo } from 'react'
 import { useSelector } from 'react-redux'
 
 import { Button, TextInput, useAppDispatch, useTypedTranslation } from 'Shared'
+import { DynamicModuleLoader } from 'Shared/lib/components/DynamicModuleLoader'
+import { ReducersList } from 'Shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 
 import { LoginActions, LoginReducer } from '../../model/slices/LoginSlice'
 import { LoginByEmail } from '../../model/services/AuthByEmail/AuthByEmail'
@@ -11,8 +13,6 @@ import { getLoginLoading } from '../../model/selectors/getLoginLoading/getLoginL
 import { getLoginError } from '../../model/selectors/getLoginError/getLoginError'
 
 import s from './AuthorizationForm.module.scss'
-import { DynamicModuleLoader } from 'Shared/lib/components/DynamicModuleLoader'
-import { ReducersList } from 'Shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 
 const initialReducers: ReducersList = { loginStateSchema: LoginReducer }
 

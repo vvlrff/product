@@ -1,0 +1,8 @@
+{
+    "fields": {
+        "emailPlaceholder": "Email",
+        "firstNamePlaceholder": "Name",
+        "lastNamePlaceholder": "Last name"
+    },
+    "buttonEdit": "Edit"
+}

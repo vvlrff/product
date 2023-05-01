@@ -1,11 +1,12 @@
 import { EnhancedStore } from '@reduxjs/toolkit'
 import { AxiosInstance } from 'axios'
 import { CounterSchema } from 'Entities'
-import { LoginSchema } from 'Features/AuthByEmail'
-import { RegisterUserSchema } from 'Features/Registration'
 import { NavigateOptions, To } from 'react-router-dom'
 import { AnyAction, CombinedState, Reducer, ReducersMapObject } from 'redux'
 import { UserLoginStateSchema } from 'Shared/types/RegistrationAutorizationTypes'
+import { ProfileStateSchema } from 'Features/ProfileForm/model/types/ProfileStateSchema'
+import { LoginSchema } from 'Features/AuthByEmail'
+import { RegisterUserSchema } from 'Features/Registration'
 import { createReduxStore } from './store'
 
 export interface StateSchema {
@@ -15,6 +16,7 @@ export interface StateSchema {
   // Асинхронные редьюсеры
   loginStateSchema?: LoginSchema
   registerUserSchema?: RegisterUserSchema
+  profileFormSchema?: ProfileStateSchema
 }
 
 export type StateSchemaKeys = keyof StateSchema
