@@ -1,4 +1,5 @@
 import { ChangeEvent, HTMLAttributes, memo } from 'react'
+import cn from 'classnames'
 
 import s from './TextInput.module.scss'
 
@@ -15,6 +16,7 @@ export const TextInput = memo((props: ITextInput) => {
     onChange,
     placeholder,
     type = 'text',
+    className,
     ...otherProps
   } = props
 
@@ -25,7 +27,7 @@ export const TextInput = memo((props: ITextInput) => {
   return (
       <input
           type={type}
-          className={s.input}
+          className={cn(s.input, className)}
           value={value}
           onChange={changeEventHandler}
           placeholder={placeholder}

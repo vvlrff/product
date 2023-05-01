@@ -9,6 +9,16 @@
       "email": "olivier@mail.com",
       "password": "$2a$10$0YXmJheV5jK9J32uGrf7q.l86nyNhZ7ai/D/ZCVC4P5a61xcEMbHi",
       "id": 2
+    },
+    {
+      "email": "novichok@mail.ru",
+      "password": "$2a$10$1nvnuG1wO.yL9zlC6OxGSO.7A2b9fv04fcBHPPCY/s3jt.qYfebM6",
+      "id": 3
     }
-  ]
+  ],
+  "profile": {
+    "email": "olivier@mail.com",
+    "name": "Artem",
+    "lastName": "Morozov"
+  }
 }

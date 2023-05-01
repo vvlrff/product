@@ -1,11 +1,12 @@
-import { ProfileCard } from 'Entities/ProfileCard/ProfileCard'
-import { Layout } from 'Widgets'
 import { FC } from 'react'
+
+import { ProfileForm } from 'Features/ProfileForm'
+import { Layout } from 'Widgets'
 
 const ProfilePage: FC = () => {
   return (
       <Layout>
-          <ProfileCard />
+          <ProfileForm />
       </Layout>
   )
 }

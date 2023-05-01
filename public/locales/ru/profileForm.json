@@ -1,0 +1,9 @@
+{
+  "fields": {
+    "emailPlaceholder": "Email",
+    "firstNamePlaceholder": "Имя",
+    "lastNamePlaceholder": "Фамилия"
+  },
+  "buttonEdit": "Редактировать",
+  "buttonSave": "Сохранить"
+}
