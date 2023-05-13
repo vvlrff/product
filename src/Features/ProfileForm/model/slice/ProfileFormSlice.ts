@@ -2,6 +2,7 @@ import { fetchProfileData } from './../services/fetchProfileData/fetchProfileDat
 import { createSlice } from '@reduxjs/toolkit'
 
 import { ProfileStateSchema } from '../types/ProfileStateSchema'
+import { patchProfileData } from '../services/patchProfileData/patchProfileData'
 
 const initialState: ProfileStateSchema = {
   isEdit: false,
@@ -31,6 +32,15 @@ export const ProfileFormSlice = createSlice({
       .addCase(fetchProfileData.rejected, (state, action) => {
         state.isLoading = false
         state.error = action.payload
+      })
+      .addCase(patchProfileData.pending, state => {
+        state.error = undefined
+        state.isLoading = true
+      })
+      .addCase(patchProfileData.fulfilled, (state, action) => {
+        state.isLoading = false
+        state.isEdit = false
+        state.data = action.payload
       })
   }
 })

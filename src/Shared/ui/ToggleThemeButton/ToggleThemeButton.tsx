@@ -1,4 +1,4 @@
-import { FC, memo, ReactNode } from 'react'
+import { memo, ReactNode } from 'react'
 
 import { useTheme } from 'Shared'
 import Button from 'Shared/ui/Button'
