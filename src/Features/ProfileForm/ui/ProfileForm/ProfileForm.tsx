@@ -1,4 +1,4 @@
-import { FC, memo, useEffect } from 'react'
+import { FC, memo, useEffect, useMemo } from 'react'
 import { Avatar } from 'Shared/ui/Avatar'
 
 import { FormProvider, useForm } from 'react-hook-form'
@@ -12,6 +12,8 @@ import { ProfileFormActions, ProfileFormReducer } from '../../model/slice/Profil
 import { fetchProfileData } from '../../model/services/fetchProfileData/fetchProfileData'
 import { getProfileData } from '../../model/selectors/getProfileData/getProfileData'
 import { getProfileIsEdit } from '../../model/selectors/getProfileMode/getProfileIsEdit'
+import { patchProfileData } from '../../model/services/patchProfileData/patchProfileData'
+import { ProfileType } from '../../model/types/ProfileStateSchema'
 
 import s from './ProfileForm.module.scss'
 
@@ -20,33 +22,31 @@ const initialReducers: ReducersList = {
 }
 
 const ProfileForm: FC = () => {
-  const methods = useForm({
-    mode: 'onChange'
-  })
-  const { handleSubmit, setValue } = methods
   const { t } = useTranslation('profileForm')
   const dispatch = useAppDispatch()
   const isReadOnly = !useSelector(getProfileIsEdit)
   const profileData = useSelector(getProfileData)
+
+  const methods = useForm({
+    mode: 'onChange',
+    defaultValues: useMemo(() => profileData, [profileData])
+  })
+  const { handleSubmit, reset } = methods
 
   useEffect(() => {
     dispatch(fetchProfileData())
   }, [dispatch])
 
   useEffect(() => {
-    if (profileData) {
-      setValue('email', profileData.email)
-      setValue('firstName', profileData.name)
-      setValue('lastName', profileData.lastName)
-    }
-  }, [profileData])
+    reset(profileData)
+  }, [profileData, reset])
 
   const handleOnEdit = () => {
     dispatch(ProfileFormActions.setEditableMode())
   }
 
-  const handleOnSave = (data: any) => {
-    console.log(data)
+  const handleOnSave = (data: ProfileType) => {
+    dispatch(patchProfileData(data))
   }
 
   return (
