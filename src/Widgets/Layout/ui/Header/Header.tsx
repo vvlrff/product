@@ -1,5 +1,6 @@
 import { FC, useState } from 'react'
 import { Link } from 'react-router-dom'
+import MenuIcon from '@mui/icons-material/Menu'
 
 import { AuthorizationModal, RegistrationModal } from 'Features'
 import { Autocomplete, Button, Container, Logotype, ToggleLanguegeButton, ToggleThemeButton, useAppDispatch, useTypedTranslation } from 'Shared'
@@ -20,14 +21,12 @@ export const Header: FC = () => {
   if (isAuth) {
     return (
         <header className={s.header}>
+            <MenuIcon className={s.menuIcon} />
             <Container className={s.container}>
                 <div className={s.links}>
                     <Link className={s.link} to={'/'}>
                         <Logotype className={s.logotype} />
                     </Link>
-                </div>
-                <div className={s.search}>
-                    <Autocomplete placeholder={t('widget_header_search_placeholder')} />
                 </div>
                 <div className={s.controls}>
                     <Button
