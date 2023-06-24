@@ -2,7 +2,6 @@ import i18next from 'i18next'
 import { RoutesPath } from 'Shared/config/RouterConfig/AppRoutes'
 import HomeIcon from '@mui/icons-material/Home'
 import PersonIcon from '@mui/icons-material/Person'
-import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket'
 import { ReactNode } from 'react'
 
 interface ISidebarNavigationItemSchema {
@@ -15,7 +14,7 @@ interface ISidebarNavigationItemSchema {
 interface ISidebarNavigationSchema {
   Home: ISidebarNavigationItemSchema
   Profile: ISidebarNavigationItemSchema
-  Product: ISidebarNavigationItemSchema
+  Articles: ISidebarNavigationItemSchema
 }
 
 type ISidebarNavigationSchemaKeys = keyof ISidebarNavigationSchema
@@ -32,9 +31,9 @@ export const SidebarNavigationSchema: Record<ISidebarNavigationSchemaKeys, ISide
     text: i18next.t('widget_sidebar_navigation_text_profile'),
     authOnly: true
   },
-  Product: {
-    icon: <ShoppingBasketIcon />,
-    route: RoutesPath.product,
-    text: i18next.t('widget_sidebar_navigation_text_product')
+  Articles: {
+    icon: <PersonIcon />,
+    route: RoutesPath.articles,
+    text: i18next.t('widget_sidebar_navigation_text_articles')
   }
 }

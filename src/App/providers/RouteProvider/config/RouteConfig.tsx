@@ -1,4 +1,6 @@
-import { HomePage, NotFoundPage, ProductPage } from 'Pages'
+import { HomePage, NotFoundPage } from 'Pages'
+import { ArticleSinglePage } from 'Pages/ArticleSinglePage'
+import { ArticlesPage } from 'Pages/ArticlesPage'
 import { ProfilePage } from 'Pages/ProfilePage'
 
 import { AppRoutes, AppRoutesWithAuthProps, RoutesPath } from 'Shared/config/RouterConfig/AppRoutes'
@@ -13,9 +15,13 @@ export const routeConfig: Record<AppRoutes, AppRoutesWithAuthProps> = {
     element: <ProfilePage />,
     authOnly: true
   },
-  [AppRoutes.PRODUCT]: {
-    path: RoutesPath.product,
-    element: <ProductPage />
+  [AppRoutes.ARTICLES]: {
+    path: RoutesPath.articles,
+    element: <ArticlesPage />
+  },
+  [AppRoutes.ARTICLE_SINGLE]: {
+    path: RoutesPath.articleSingle + '/:id',
+    element: <ArticleSinglePage />
   },
   // 404
   [AppRoutes.NOT_FOUND]: {
