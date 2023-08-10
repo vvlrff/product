@@ -7,15 +7,25 @@ import i18n from 'Shared/config/i18next/i18next'
 interface IRegisterProps {
   email?: string
   password?: string
+  confirmPassword?: string
+  username?: string
+  fullname?: string
 }
 
-export const RegisterByEmail = createAsyncThunk<IUser, IRegisterProps, ThunkApiType<string>>(
+export interface IRegisterUserSchema extends IUser {
+  username: string
+  fullname: string
+  confirmPassword: string
+}
+
+export const RegisterByEmail = createAsyncThunk<IRegisterUserSchema, IRegisterProps, ThunkApiType<string>>(
   'register/registerByEmail',
   async (authData, thunkApi) => {
     const { rejectWithValue, extra } = thunkApi
 
     try {
-      const response = await extra.api.post<IUser>('/register', authData)
+      console.log(authData)
+      const response = await extra.api.post<IRegisterUserSchema>('/auth/register', authData)
       if (!response.data) {
         throw new Error('Something went wrong')
       }

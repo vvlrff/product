@@ -4,7 +4,7 @@ import { Button, useTypedTranslation } from 'Shared'
 import s from './PageError.module.scss'
 
 const PageError: FC = () => {
-  const { t } = useTypedTranslation('pageError')
+  const { t } = useTypedTranslation()
 
   const reload = () => {
     window.location.reload()

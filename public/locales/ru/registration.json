@@ -1,0 +1,24 @@
+{
+    "title": "Регистрация",
+    "email": {
+        "placeholder": "Введите email адрес"
+    },
+    "username": {
+        "placeholder": "Введите ваше имя"
+    },
+    "fullname": {
+        "placeholder": "Введите вашу фамилию"
+    },
+    "password": {
+        "placeholder": "Придумайте паролль"
+    },
+    "confirmPassword": {
+        "placeholder": "Повторите пароль"
+    },
+    "buttonText": "Регмстрация",
+    "errors": {
+        "email": {
+            "required": "Email обязателен для заполнения"
+        }
+    }
+}
