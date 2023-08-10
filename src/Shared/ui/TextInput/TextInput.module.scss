@@ -3,7 +3,7 @@
 .input {
     padding-left: 8px;
     background-color: var(--primary);
-    color: var(--font-color-secondary);
+    color: var(--font-color-accent);
     height: 40px;
     border: none;
     border-radius: 4px;
@@ -12,6 +12,6 @@
 
     &::placeholder {
         font-size: var(--fs-small);
-        color: var(--font-color-accent);
+        color: var(--font-color-secondary);
     }
 }

@@ -7,14 +7,16 @@ interface IText {
   children: string
   className?: string
   variant?: 'title' | 'text'
+  type?: 'error'
   uppercase?: boolean
 }
 
 export const Text = memo((props: IText) => {
-  const { children, variant = 'text', uppercase = false, className } = props
+  const { children, variant = 'text', uppercase = false, className, type } = props
 
   const mods = {
-    [s.uppercase]: uppercase
+    [s.uppercase]: uppercase,
+    [s.error]: type === 'error'
   }
 
   if (variant === 'title') {

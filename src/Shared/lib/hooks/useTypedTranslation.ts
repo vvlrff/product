@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next'
 
-type IuseTypedTranslation = 'pageError' | 'header' | 'footer'
+type IuseTypedTranslation = 'registration' | 'authorization'
 
 const useTypedTranslation = (type?: IuseTypedTranslation) => {
   return useTranslation(type)

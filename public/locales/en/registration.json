@@ -1,0 +1,19 @@
+{
+    "title": "Registration Form",
+    "email": {
+        "placeholder": "your Email address"
+    },
+    "username": {
+        "placeholder": "username"
+    },
+    "fullname": {
+        "placeholder": "sename"
+    },
+    "password": {
+        "placeholder": "password"
+    },
+    "confirmPassword": {
+        "placeholder": "confirm password"
+    },
+    "buttonText": "register"
+}

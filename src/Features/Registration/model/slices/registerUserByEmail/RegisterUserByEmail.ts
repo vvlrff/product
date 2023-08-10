@@ -4,7 +4,10 @@ import { RegisterUserSchema } from '../../types/RegisterUserSchema'
 
 const initialState: RegisterUserSchema = {
   password: '',
+  confirmPassword: '',
   email: '',
+  username: '',
+  fullname: '',
   isLoading: false,
   error: null
 }
@@ -16,8 +19,17 @@ const createUserByEmail = createSlice({
     setEmail: (state, action: PayloadAction<string>) => {
       state.email = action.payload
     },
+    setUsername: (state, action: PayloadAction<string>) => {
+      state.username = action.payload
+    },
+    setFullname: (state, action: PayloadAction<string>) => {
+      state.fullname = action.payload
+    },
     setPassword: (state, action: PayloadAction<string>) => {
       state.password = action.payload
+    },
+    setConfirmPassword: (state, action: PayloadAction<string>) => {
+      state.confirmPassword = action.payload
     }
   },
   extraReducers: (builder) => {
